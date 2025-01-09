@@ -1,0 +1,18 @@
+[
+  {
+    "id": "Education",
+    "description": "Education"
+  },
+  {
+    "id": "Health",
+    "description": "Health"
+  },
+  {
+    "id": "Tax",
+    "description": "Tax"
+  },
+  {
+    "id": "Other",
+    "description": "Other Topics"
+  }
+]
