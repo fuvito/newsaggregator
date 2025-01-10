@@ -1,15 +1,14 @@
-import {states} from "@/app/data/states";
 import {topics} from "@/app/data/topics";
+import {DataTable} from "primereact/datatable";
+import {Column} from "primereact/column";
 
 export default function Home() {
   return (
-    <div>
-      <h1>Article Topics</h1>
-      <ul>
-        {topics.map((topic) => (
-          <li key={topic.id}>id: {topic.id}, name: {topic.description}</li>
-        ))}
-      </ul>
-    </div>
+    <>
+      <DataTable value={topics} showGridlines header="Article Topics" tableStyle={{minWidth: '60rem'}}>
+        <Column field="id" header="Id"></Column>
+        <Column field="description" header="Description"></Column>
+      </DataTable>
+    </>
   );
 }
