@@ -5,7 +5,7 @@ import {Column} from "primereact/column";
 export default function Home() {
   return (
     <>
-      <DataTable value={states} showGridlines header="US States" tableStyle={{minWidth: '60rem'}}>
+      <DataTable value={states} showGridlines stripedRows header="US States">
         <Column field="id" header="Id"></Column>
         <Column field="name" header="Name"></Column>
       </DataTable>

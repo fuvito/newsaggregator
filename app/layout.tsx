@@ -10,6 +10,7 @@ import 'primeicons/primeicons.css';
 
 import NavBar from "@/app/NavBar";
 import {PrimeReactProvider} from "primereact/api";
+import BootstrapClient from "@/app/BootstrapClient";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,6 +37,7 @@ export default function RootLayout({
     <html lang="en">
     <body className={`${geistSans.variable} ${geistMono.variable}`}>
       <PrimeReactProvider>
+        <BootstrapClient />
         <NavBar></NavBar>
         <main>
           {children}
