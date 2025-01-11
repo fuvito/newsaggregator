@@ -134,3 +134,15 @@ dist
 .idea
 .idea/*
 /.idea/
+/.idea/dataSources/
+/.idea/inspectionProfiles/
+/.idea/.gitignore
+/.idea/aws.xml
+/.idea/dataSources.local.xml
+/.idea/dataSources.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/newsaggregator.iml
+/.idea/sqldialects.xml
+/.idea/vcs.xml
+/.idea/workspace.xml
