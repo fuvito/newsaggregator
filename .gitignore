@@ -131,4 +131,6 @@ dist
 
 
 # inteelij folder
+.idea/
+.idea/*
 /.idea/
