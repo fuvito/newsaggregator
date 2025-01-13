@@ -1,6 +1,5 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
-@import 'primereact/resources/themes/bootstrap4-light-blue/theme.css';
-@import 'primeicons/primeicons.css';
+@import "bootstrap-icons/font/bootstrap-icons.css";
 
 body {
     padding-top: 65px;

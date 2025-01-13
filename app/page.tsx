@@ -1,4 +1,4 @@
-import Articles from "@/app/articles/page";
+import Articles from "@/app/news/page";
 
 export default function Home() {
   return (

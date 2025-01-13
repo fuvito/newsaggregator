@@ -1,14 +1,24 @@
 import {topics} from "@/app/data/topics";
-import {DataTable} from "primereact/datatable";
-import {Column} from "primereact/column";
 
 export default function Home() {
   return (
     <>
-      <DataTable value={topics} showGridlines stripedRows header="Article Topics">
-        <Column field="id" header="Id"></Column>
-        <Column field="description" header="Description"></Column>
-      </DataTable>
+      <table>
+        <thead>
+          <tr className="border-bottom border-primary">
+            <th>Id</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+        {topics.map(topic =>
+          <tr key={topic.id} className="border-bottom border-primary">
+            <td>{topic.id}</td>
+            <td>{topic.description}</td>
+          </tr>
+        )}
+        </tbody>
+      </table>
     </>
   );
 }
