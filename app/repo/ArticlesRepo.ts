@@ -1,5 +1,5 @@
 import Article from "@/app/types/article";
-import {fetchAll} from "@/app/data/sqlWrapper";
+import {fetchAll, fetchFirst} from "@/app/data/sqlWrapper";
 import {Database} from "sqlite3";
 
 export async function findAll(state: string = "", topic: string = "", search: string = ""): Promise<Article[]> {
@@ -33,12 +33,25 @@ export async function findAll(state: string = "", topic: string = "", search: st
   }
 
 
-  const selectQuery  = 'SELECT * FROM articles ' + whereCondition
+  const selectQuery = 'SELECT * FROM articles ' + whereCondition
   console.log('selectQuery: ', selectQuery)
 
   const rows: Article[] = await fetchAll<Article>(db, selectQuery, params);
   // console.log("FetchAll: ", rows)
   db.close();
   return rows;
+}
+
+export async function findOne(id: string): Promise<Article | null> {
+  const db = new Database('test.db');
+  const params: string[] = [];
+  params.push(id)
+
+  const selectQuery = 'SELECT * FROM articles WHERE id= ?'
+  console.log('selectQuery: ', selectQuery)
+
+  const row: Article = await fetchFirst<Article>(db, selectQuery, params);
+  db.close();
+  return row
 }
 

@@ -31,3 +31,28 @@ export async function getArticles(state: string = "", topic: string = "", search
   }
 }
 
+export async function getArticle(id: string = ""): Promise<Article> {
+  // first sanitize the parameters
+  id = DOMPurify().sanitize(id);
+
+  // then encode URIs
+  id = encodeURIComponent(id);
+
+  const api_url = `/api/news/${id}`;
+  console.log('api url: ', api_url)
+
+  try {
+    console.log("calling : ", api_url)
+    const response: Response = await fetch(api_url, {
+      method: 'GET'
+    })
+
+    const article: Article = await response.json()
+    console.log("article found: ", article)
+    return article;
+  } catch (error) {
+    console.error("Error while making api call: " + api_url, error)
+    throw error;
+  }
+}
+

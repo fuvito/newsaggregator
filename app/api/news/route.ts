@@ -1,9 +1,9 @@
 import {findAll} from "@/app/repo/ArticlesRepo";
 import {NextRequest} from "next/server";
 
-export async function GET(_request: NextRequest) {
+export async function GET(request: NextRequest) {
   // get params
-  const searchAndFilterParams = _request.nextUrl.searchParams
+  const searchAndFilterParams = request.nextUrl.searchParams
   const state = searchAndFilterParams.get('state') ?? "";
   const topic = searchAndFilterParams.get('topic') ?? "";
   const search = searchAndFilterParams.get('search') ?? "";
